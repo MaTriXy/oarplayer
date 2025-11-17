@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
     sourceSets {
         main {
             jniLibs.srcDirs = ['jni_lib_src/libs']
@@ -11,10 +11,9 @@ android {
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        targetSdkVersion 33
+        ndkVersion "21.4.7075529"
+      testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 //cppFlags "-std=c++11 -frtti -fexceptions -Wformat -Werror=format-security"
@@ -33,6 +32,7 @@ android {
             path "CMakeLists.txt"
         }
     }
+  namespace 'com.wodekouwei.srsrtmpplayer'
 }
 
 dependencies {
@@ -43,4 +43,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
-apply from: 'gradle-mvn-push.gradle'
+//apply from: 'gradle-mvn-push.gradle'
